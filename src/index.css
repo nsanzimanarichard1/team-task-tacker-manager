@@ -53,6 +53,13 @@ All colors MUST be HSL.
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Enhanced design tokens */
+    --primary-glow: 222.2 84% 70%;
+    --gradient-hero: radial-gradient(600px 200px at var(--x, 50%) var(--y, 50%), hsl(var(--sidebar-ring) / 0.25), transparent 60%);
+    --shadow-elegant: 0 12px 35px -12px hsl(var(--primary) / 0.35);
+    --shadow-glow: 0 0 40px hsl(var(--sidebar-ring) / 0.25);
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
@@ -91,6 +98,13 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Enhanced design tokens */
+    --primary-glow: 210 40% 80%;
+    --gradient-hero: radial-gradient(600px 200px at var(--x, 50%) var(--y, 50%), hsl(var(--sidebar-ring) / 0.30), transparent 60%);
+    --shadow-elegant: 0 12px 35px -12px hsl(var(--sidebar-ring) / 0.25);
+    --shadow-glow: 0 0 50px hsl(var(--sidebar-ring) / 0.35);
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -101,5 +115,17 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  .bg-hero-interactive {
+    background-image: var(--gradient-hero);
   }
 }
